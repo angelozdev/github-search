@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react';
+/* Style */
+import { GlobalStyle } from './react-components/styles/GlobalStyle';
+import 'normalize.css/normalize.css';
 
 /* Pages */
 import Home from './pages/Home';
 
-/* Style */
-import { GlobalStyle } from './react-components/styles/GlobalStyle';
 
 
 const App = () => {
    return (
       <Fragment>
-         <Home />
          <GlobalStyle />
+         <Home />
       </Fragment>
    )
 }
