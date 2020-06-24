@@ -13,7 +13,7 @@ import Search from './Search';
 import { useFetchData } from '../hooks/useFetchData'
 
 const User = () => {
-   const [query, setQuery] = useState('angelozam17');
+   const [query, setQuery] = useState('reactjs');
    const [user, { loading }] = useFetchData(query, {})
    console.log(user)
 
