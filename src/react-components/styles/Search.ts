@@ -18,11 +18,15 @@ export const SearchStyled = styled.form`
       border: none;
       outline: none;
       background-color: transparent;
+      &[disabled]{
+         background-color: gray;
+      }
    }
 
    button {
       border: none;
       outline: none;
+      background-color: transparent;
       cursor: pointer;
       &[disabled]{
          background-color: gray;
