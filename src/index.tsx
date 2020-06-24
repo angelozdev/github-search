@@ -3,6 +3,6 @@ import { render } from 'react-dom';
 import App from './App';
 
 /* Styles */
-import './styles/global.css'
+import 'normalize.css/normalize.css';
 
 render(<App />, document.querySelector('#root'));

@@ -1,11 +1,18 @@
-import React from 'react';
-import styles from "./styles/App.css";
+import React, { Fragment } from 'react';
+
+/* Pages */
+import Home from './pages/Home';
+
+/* Style */
+import { GlobalStyle } from './react-components/styles/GlobalStyle';
+
 
 const App = () => {
    return (
-      <div>
-         <h1 className={styles.title}>Hola Mundo</h1>
-      </div>
+      <Fragment>
+         <Home />
+         <GlobalStyle />
+      </Fragment>
    )
 }
 
