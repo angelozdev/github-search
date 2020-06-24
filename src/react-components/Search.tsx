@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState, FormEvent, useRef } from 'react';
 
 /* styles */
 import { SearchStyled } from './styles/Search';
+import { FaSearch } from 'react-icons/fa'
 
 interface IProps {
    setQuery: (search: string) => void,
@@ -28,7 +29,9 @@ const Search = ({ setQuery, loading }: IProps) => {
    return (
       <SearchStyled onSubmit={handleSubmit}>
          <input onChange={handleChange} value={search} type="text" placeholder="Search..." ref={el} />
-         <button disabled={loading} type="submit">Search</button>
+         <button disabled={loading} type="submit">
+            <FaSearch color="#aaaaaa" />
+         </button>
       </SearchStyled>
    )
 }

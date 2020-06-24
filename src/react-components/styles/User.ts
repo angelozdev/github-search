@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const UserStyled = styled.div`
    width: 100%;
-   height: 100vh;
-   max-height: 750px;
+   height: auto;
    max-width: 425px;
    margin: 0 auto;
-   border: 1px solid lightgray;
+   background-color: var(--bg);
 
    .header {
       width : 100%;
@@ -22,7 +21,7 @@ export const UserStyled = styled.div`
          bottom: 0;
          left  : 0;
          right : 0;
-         z-index: -1;
+         z-index: -0;
          background-color: var(--color-primary);
          background-image: radial-gradient(white 15%, transparent 16%),
          radial-gradient(white 15%, transparent 16%);
@@ -107,9 +106,14 @@ export const UserStyled = styled.div`
    .social {
       display: flex;
       justify-content: space-around;
-
+      a {
+         display: flex;
+         align-items: center;
+         color: var(--color-primary);
+         text-decoration: none;
+      }
       svg {
-         margin: 2rem 0;
+         margin: 1rem .2rem 1rem 0;
       }
    }
 `

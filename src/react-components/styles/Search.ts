@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const SearchStyled = styled.form`
    background-color: var(--bg);
    width: 80%;
-   padding: .5rem 1rem;
+   padding: .3rem .7rem .3rem 1rem;
    position: absolute;
    top: 2rem;
    left: 50%;
    margin-left: -40%;
    border-radius: 27px;
    display: flex;
+   z-index: 1;
 
    input {
       width: 100%;
@@ -20,8 +21,11 @@ export const SearchStyled = styled.form`
    }
 
    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
       &[disabled]{
-         background-color: green;
+         background-color: gray;
       }
    }
 
