@@ -30,7 +30,7 @@ const Search = ({ setQuery, loading }: IProps) => {
       <SearchStyled onSubmit={handleSubmit}>
          <input disabled={loading} onChange={handleChange} value={search} type="text" placeholder="Search..." ref={el} />
          <button disabled={loading} type="submit">
-            <FaSearch color="#aaaaaa" />
+            <FaSearch />
          </button>
       </SearchStyled>
    )

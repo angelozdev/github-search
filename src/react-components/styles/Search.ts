@@ -17,6 +17,7 @@ export const SearchStyled = styled.form`
       padding: .5rem;
       border: none;
       outline: none;
+      color: var(--color-primary);
       background-color: transparent;
       &[disabled]{
          background-color: gray;
@@ -30,6 +31,10 @@ export const SearchStyled = styled.form`
       cursor: pointer;
       &[disabled]{
          background-color: gray;
+      }
+
+      svg {
+         color: var(--color-primary);
       }
    }
 

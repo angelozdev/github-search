@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 
 /* Styles */
 import { UserStyled } from './styles/User';
@@ -12,7 +12,7 @@ import Search from './Search';
 /* Hooks */
 import { useFetchData } from '../hooks/useFetchData'
 
-const User = () => {
+const User: FC = () => {
    const [query, setQuery] = useState('reactjs');
    const [user, { loading }] = useFetchData(query, {})
    console.log(user)

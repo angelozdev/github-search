@@ -22,7 +22,7 @@ export const UserStyled = styled.div`
          left  : 0;
          right : 0;
          z-index: -0;
-         background-color: var(--color-primary);
+         background-color: var(--color-primary-light);
          background-image: radial-gradient(white 15%, transparent 16%),
          radial-gradient(white 15%, transparent 16%);
          background-size: 60px 60px;

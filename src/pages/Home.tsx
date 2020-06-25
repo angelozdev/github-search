@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, FC } from 'react';
 
 /* Components */
 import User from '../react-components/User';
 
-const Home = () => {
+const Home: FC = () => {
    return (
       <Fragment>
          <User />
@@ -11,4 +11,4 @@ const Home = () => {
    )
 }
 
-export default Home
+export default Home;

@@ -1,10 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
 
+interface ITheme {
+   theme: {
+      bg: string,
+      colorPrimary: string
+   }
+}
+
 export const GlobalStyle = createGlobalStyle`
    :root {
-      --bg: #f1f1f1;
+      --bg: ${({theme}: ITheme) => theme.bg};
       --color-primary-light: #2b3137;
-      --color-primary: #24292e;
+      --color-primary: ${({theme}: ITheme) => theme.colorPrimary};
       --color-green: #2dba4e;
    }
 
