@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const UserStyled = styled.div`
    width: 100%;
-   height: auto;
+   height: 100%;
    max-width: 425px;
    margin: 0 auto;
    background-color: var(--bg);
@@ -19,6 +19,7 @@ export const UserStyled = styled.div`
       background-position: 0 0, 30px 30px;
 
       & .btn-darkmode {
+         cursor: pointer;
          position: absolute;
          bottom: 20px;
          margin-right: -5rem;
