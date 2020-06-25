@@ -21,7 +21,7 @@ export const UserStyled = styled.div`
       & .btn-darkmode {
          position: absolute;
          bottom: 20px;
-         margin-right: -4rem;
+         margin-right: -5rem;
          right: 25%;
          z-index: 2;
          border: 3px solid var(--color-green);
