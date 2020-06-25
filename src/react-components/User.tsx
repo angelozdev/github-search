@@ -1,8 +1,8 @@
-import React, { useState, FC } from 'react';
+import React, { useState, FC, useContext } from 'react';
 
 /* Styles */
 import { UserStyled } from './styles/User';
-import { FaTwitter, FaGithub }  from "react-icons/fa";
+import { FaTwitter, FaGithub, FaMoon, FaRegMoon }  from "react-icons/fa";
 import ReactPlaceholder from 'react-placeholder';
 import { UserPlaceholder } from './placeholders/User'
 
@@ -10,12 +10,15 @@ import { UserPlaceholder } from './placeholders/User'
 import Search from './Search';
 
 /* Hooks */
-import { useFetchData } from '../hooks/useFetchData'
+import { useFetchData } from '../hooks/useFetchData';
+
+/* Cntext */
+import { themeContext } from '../context/themeContext'
 
 const User: FC = () => {
    const [query, setQuery] = useState('reactjs');
+   const { toggleTheme, isLight } = useContext<any>(themeContext)
    const [user, { loading }] = useFetchData(query, {})
-   console.log(user)
 
    return (
       <ReactPlaceholder
@@ -25,7 +28,12 @@ const User: FC = () => {
          <UserStyled>
             <div className="header">
                <Search setQuery={setQuery} loading={loading} />
-               <span></span>
+               <button className="btn-darkmode" onClick={toggleTheme}>
+                  {isLight
+                     ? <FaRegMoon size="2rem" color="#2dba4e" />
+                     : <FaMoon size="2rem" color="#2dba4e" />
+                  }
+               </button>
             </div>
 
             <div className="body">
@@ -57,7 +65,7 @@ const User: FC = () => {
                      <span>@{user.twitter_username}</span>
                   </a>
                   <a target="_blank" href={`https://github.com/${user.login}`}>
-                     <FaGithub color="#2b3137" size="1.5rem" />
+                     <FaGithub color={isLight ? '#2b3137' : "white"} size="1.5rem" />
                      <span>{user.login}</span>
                   </a>
                </div>

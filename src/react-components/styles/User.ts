@@ -12,21 +12,23 @@ export const UserStyled = styled.div`
       height: 200px;
       margin : 0;
       position: relative;
+      background-color: var(--color-primary-light);
+      background-image: radial-gradient(white 15%, transparent 16%),
+      radial-gradient(white 15%, transparent 16%);
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
 
-      & span {
-         width : 100%;
-         height: 100%;
+      & .btn-darkmode {
          position: absolute;
-         top   : 0;
-         bottom: 0;
-         left  : 0;
-         right : 0;
-         z-index: -0;
-         background-color: var(--color-primary-light);
-         background-image: radial-gradient(white 15%, transparent 16%),
-         radial-gradient(white 15%, transparent 16%);
-         background-size: 60px 60px;
-         background-position: 0 0, 30px 30px;
+         bottom: 20px;
+         margin-right: -4rem;
+         right: 25%;
+         z-index: 2;
+         border: 3px solid var(--color-green);
+         outline: none;
+         border-radius: 50%;
+         padding: .5rem;
+         background-color: var(--bg);
       }
    }
 

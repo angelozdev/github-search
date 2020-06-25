@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 /* Style */
 import { GlobalStyle } from './react-components/styles/GlobalStyle';
@@ -9,13 +9,15 @@ import 'normalize.css/normalize.css';
 /* Pages */
 import Home from './pages/Home';
 
+/* Context */
+import { themeContext } from './context/themeContext';
+
 const App = () => {
-   const [light, setTheme] = useState(true)
+   const { isLight } = useContext<any>(themeContext)
    return (
-      <ThemeProvider theme={light === true ? lightTheme : darkTheme}>
+      <ThemeProvider theme={isLight === true ? lightTheme : darkTheme}>
          <GlobalStyle />
          <Home />
-         <button onClick={() => setTheme(!light)}>Dark Mode</button>
       </ThemeProvider>
    )
 }
