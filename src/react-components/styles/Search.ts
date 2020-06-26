@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const SearchStyled = styled.form`
    background-color: var(--bg);
-   width: 80%;
+   width: 90%;
    padding: .3rem .7rem .3rem 1rem;
    position: absolute;
    top: 2rem;
    left: 50%;
-   margin-left: -40%;
+   margin-left: -45%;
    border-radius: 27px;
    display: flex;
    z-index: 1;

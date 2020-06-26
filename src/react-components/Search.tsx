@@ -4,13 +4,17 @@ import React, { ChangeEvent, useState, FormEvent, useRef } from 'react';
 import { SearchStyled } from './styles/Search';
 import { FaSearch } from 'react-icons/fa'
 
+/* Redux */
+import { useDispatch } from 'react-redux';
+import { SET_QUERY } from '../redux/actions'
+
 interface IProps {
-   setQuery: (search: string) => void,
    loading: boolean
 }
 
-const Search = ({ setQuery, loading }: IProps) => {
+const Search = ({ loading }: IProps) => {
    const [search, setSearch] = useState('');
+   const dispatch = useDispatch()
    const el = useRef(null)
 
    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +24,7 @@ const Search = ({ setQuery, loading }: IProps) => {
    const handleSubmit = (e: FormEvent) => {
       e.preventDefault()
       if(search !== ''){
-         setQuery(search)
+         dispatch({ type: SET_QUERY, payload: search })
          setSearch('')
          el.current.focus()
       }

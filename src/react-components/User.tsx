@@ -1,4 +1,4 @@
-import React, { useState, FC, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 
 /* Styles */
 import { UserStyled } from './styles/User';
@@ -12,13 +12,16 @@ import Search from './Search';
 /* Hooks */
 import { useFetchData } from '../hooks/useFetchData';
 
-/* Cntext */
-import { themeContext } from '../context/themeContext'
+/* Context */
+import { themeContext } from '../context/themeContext';
+
+/* Redux */
+import { useSelector } from 'react-redux';
 
 const User: FC = () => {
-   const [query, setQuery] = useState('reactjs');
    const { toggleTheme, isLight } = useContext<any>(themeContext)
-   const [user, { loading }] = useFetchData(query, {})
+   const { user, query } = useSelector((state: any) => state)
+   const { loading } = useFetchData(query);
 
    return (
       <ReactPlaceholder
@@ -27,7 +30,7 @@ const User: FC = () => {
       >{
          <UserStyled>
             <div className="header">
-               <Search setQuery={setQuery} loading={loading} />
+               <Search loading={loading} />
                <button className="btn-darkmode" onClick={toggleTheme}>
                   {isLight
                      ? <FaRegMoon size="2rem" color="#2dba4e" />
