@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const UserStyled = styled.div`
    width: 100%;
    height: 100vh;
-   max-width: 425px;
    margin: 0 auto;
    background-color: var(--bg);
 

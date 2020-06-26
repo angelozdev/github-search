@@ -1,4 +1,4 @@
-import React, { useState, FC, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 
 /* Styles */
 import { UserStyled } from './styles/User';
