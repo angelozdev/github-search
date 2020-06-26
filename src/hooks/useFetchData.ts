@@ -1,21 +1,28 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-export const useFetchData = (query: string, initialState = {}): [any, { loading?: boolean, error?: Error }] => {
-   const [data, setData] = useState(initialState);
+/* Redux */
+import { useDispatch } from 'react-redux';
+import { GET_USER } from '../redux/actions'
+
+export const useFetchData = (query: string): { loading?: boolean, error?: Error } => {
    const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null)
+   const dispatch = useDispatch()
 
    useEffect(() => {
       const API: string = `https://api.github.com/users/${query}`;
       setLoading(true);
 
       Axios.get(API)
-      .then((response) => setData(response.data))
+      .then((response) => dispatch({type: GET_USER, payload: response.data}))
       .then(() => setLoading(false))
-      .catch((err: Error) => setError(err))
+      .catch(() => {
+         Axios.get("https://api.github.com/users/reactjs")
+         .then((response) => dispatch({type: GET_USER, payload: response.data}))
+         .then(() => setLoading(false))
+      })
 
    }, [query])
 
-   return [data, { loading, error }];
+   return { loading };
 }

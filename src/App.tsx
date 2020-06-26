@@ -12,13 +12,19 @@ import Home from './pages/Home';
 /* Context */
 import { themeContext } from './context/themeContext';
 
+/* Redux */
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
 const App = () => {
    const { isLight } = useContext<any>(themeContext)
    return (
-      <ThemeProvider theme={isLight === true ? lightTheme : darkTheme}>
-         <GlobalStyle />
-         <Home />
-      </ThemeProvider>
+      <Provider store={store}>
+         <ThemeProvider theme={isLight === true ? lightTheme : darkTheme}>
+            <GlobalStyle />
+            <Home />
+         </ThemeProvider>
+      </Provider>
    )
 }
 
