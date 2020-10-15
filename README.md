@@ -26,6 +26,9 @@ npm start
 
 _You can see the project in production [Github Search](https://github-search-1355b.web.app/)_
 
+## Preview
+![](./screenshot.png)
+
 ## Built with
 
 _Technologies used in the frontend.:_
